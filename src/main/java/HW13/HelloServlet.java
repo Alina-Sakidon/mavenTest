@@ -9,11 +9,11 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "HelloServlet", urlPatterns = {"/hello"})
 public class HelloServlet extends HttpServlet {
-
+    private PrintWriter writer;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter writer = response.getWriter();
+        writer = response.getWriter();
         writer.println("<h1>Hello, World</h1>");
         writer.append("<!DOCTYPE html>\r\n")
                 .append("<html>\r\n")
@@ -38,7 +38,7 @@ public class HelloServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         // create HTML response
-        PrintWriter writer = response.getWriter();
+        writer = response.getWriter();
         writer.append("<!DOCTYPE html>\r\n")
                 .append("<html>\r\n")
                 .append("        <head>\r\n")
